@@ -81,5 +81,5 @@ def delete_pin(pin_id):
         return '404'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=8888, debug=True)
     db.create_all()
