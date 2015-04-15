@@ -37,8 +37,10 @@ def insert():
     # Empty db
     Pin.query.delete()
     # Example data
-    pin = Pin('title1', 4.5, 'description1', 12.772, -34.292242, 'photo', 1424411672, '904972304704039106999')
-    pin2 = Pin('title2', 2.0, 'description2', 32.222222, 11.222242, 'photo2', 1429111670, '904972304704039106999')
+    pin = Pin('August 2014 in Tallinn', 5.0, 'I spent one month in the capital of Estonia working in a hostel as a volunteer. Unforgetable experience!',
+              59.431898, 24.740681, 'photo_tallin', 1408116466, '904972304704039106999')
+    pin2 = Pin('4 days in London', 4.0, 'Visiting the capital of UK. You never get bored of London <3',
+               51.5286416, -0.1015987, 'photo_london', 1411658866, '904972304704039106999')
     db.session.add(pin)
     db.session.add(pin2)
     db.session.commit()
