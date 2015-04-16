@@ -56,7 +56,7 @@ def get_pin(pin_id):
     pin = Pin.query.filter_by(id=pin_id).first()
     return json.dumps(pin.as_dict()) if pin is not None else '404'
 
-@app.route('/pin/', methods=['POST'])
+@app.route('/pin', methods=['POST'])
 def create_pin():
     data = request.data
     data_json = data.decode(encoding='UTF-8')
