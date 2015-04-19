@@ -38,22 +38,22 @@ def insert():
     Pin.query.delete()
     # Example data
     pin = Pin('August 2014 in Tallinn', 5.0, 'I spent one month in the capital of Estonia working in a hostel as a volunteer. Unforgetable experience!',
-              59.431898, 24.740681, 'photo_tallin', 1408116466, '904972304704039106999')
+              59.431898, 24.740681, 'http://156.35.95.75:8080/1429481944.jpg', 1408116466, '904972304704039106999')
     pin2 = Pin('4 days in London', 4.0, 'Visiting the capital of UK. You never get bored of London <3',
-               51.5286416, -0.1015987, 'photo_london', 1411658866, '904972304704039106999')
+               51.5286416, -0.1015987, 'http://156.35.95.75:8080/1429483267.jpg', 1411658866, '904972304704039106999')
     pin3 = Pin('My weekend in Moscow', 4.5, 'Visiting the capital of Russia. Amazing buildings and culture.',
-               55.749792, 37.6324949, 'photo_moscow', 1411658866, '904972304704039106999')
+               55.749792, 37.6324949, 'http://156.35.95.75:8080/1429483251.jpg', 1411658866, '904972304704039106999')
     pin4 = Pin('NYC Rules! Winter 2013', 5.0, 'Undoubtedly the most stunning city I have ever been.',
-               40.7033127, -73.979681, 'photo_ny', 1411658866, '904972304704039106999')
+               40.7033127, -73.979681, 'http://156.35.95.75:8080/1429483235.jpg', 1411658866, '904972304704039106999')
     pin5 = Pin('January in Budapest', 4.9, 'Visiting my friend. Incredible atmosphere every night!',
-               47.4812134, 19.1303031, 'photo_buda', 1411658866, '904972304704039106999')
+               47.4812134, 19.1303031, 'http://156.35.95.75:8080/1429482727.jpg', 1411658866, '904972304704039106999')
     db.session.add(pin)
     db.session.add(pin2)
     db.session.add(pin3)
     db.session.add(pin4)
     db.session.add(pin5)
     db.session.commit()
-    return 'Inserted: ' + json.dumps(pin.as_dict()) + json.dumps(pin2.as_dict())
+    return 'Inserted: ' + json.dumps(pin.as_dict()) + json.dumps(pin2.as_dict()) + json.dumps(pin3.as_dict()) + json.dumps(pin4.as_dict()) + json.dumps(pin5.as_dict())
 
 @app.route('/pins/<user_google_id>', methods=['GET'])
 def get_all_pins(user_google_id):
